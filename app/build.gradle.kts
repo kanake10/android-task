@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.devtools.ksp)
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -77,6 +79,10 @@ dependencies {
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.firebase.bom)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
+
     ksp(libs.datastore)
     implementation(libs.preference)
     implementation(libs.timber)
@@ -117,5 +123,4 @@ dependencies {
     androidTestImplementation (libs.androidx.core)
     androidTestImplementation (libs.androidx.junit)
     androidTestImplementation (libs.androidx.runner)
-
 }
