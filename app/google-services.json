@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1009540490132",
+    "project_id": "vero-ff3d7",
+    "storage_bucket": "vero-ff3d7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009540490132:android:f05e5d0e7c73b12af26581",
+        "android_client_info": {
+          "package_name": "com.example.vero"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHBLPIyR14pXq6f3jnEF43Lr75stqkhCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
