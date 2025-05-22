@@ -97,25 +97,25 @@ dependencies {
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
-    implementation("com.google.mlkit:barcode-scanning:17.2.0")
-    implementation("androidx.camera:camera-camera2:1.3.0")
-    implementation("androidx.camera:camera-lifecycle:1.3.0")
-    implementation("androidx.camera:camera-view:1.3.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation(libs.barcode.scanning)
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.androidx.lifecycle.runtime.ktx.v262)
 
     // Room testing
-    testImplementation("org.robolectric:robolectric:4.10.3")
-    testImplementation("androidx.room:room-testing:2.5.2")
-    testImplementation("androidx.test:core:1.5.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation("app.cash.turbine:turbine:0.12.1")
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.room.testing)
+    testImplementation(libs.androidx.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.turbine)
 
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.10.0")
-    testImplementation("io.mockk:mockk:1.13.5")
+    testImplementation(libs.mockwebserver)
+    testImplementation(libs.mockk)
 
-    androidTestImplementation ("androidx.room:room-testing:2.6.1")
-    androidTestImplementation ("androidx.test:core:1.5.0")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation ("androidx.test:runner:1.5.2")
+    androidTestImplementation (libs.androidx.room.testing.v261)
+    androidTestImplementation (libs.androidx.core)
+    androidTestImplementation (libs.androidx.junit)
+    androidTestImplementation (libs.androidx.runner)
 
 }
