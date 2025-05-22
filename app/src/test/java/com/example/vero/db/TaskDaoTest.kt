@@ -1,6 +1,7 @@
 package com.example.vero.db
 
 import androidx.room.Room
+import androidx.room.RoomDatabase
 import androidx.test.core.app.ApplicationProvider
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
@@ -31,6 +32,7 @@ class TaskDaoTest {
             ApplicationProvider.getApplicationContext(),
             TaskDatabase::class.java
         ).allowMainThreadQueries() // Only for testing purposes
+            .setJournalMode(RoomDatabase.JournalMode.TRUNCATE)
             .build()
         dao = database.taskDao()
     }
