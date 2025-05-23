@@ -68,6 +68,6 @@ The goal of this app is to:
 ## 📷 App's Preview
 
 Here is how the app look like in action:
-Light | Dark | GIF
+Task List | Search Task | Camera
 --- | --- | ---
 <img src="https://github.com/kanake10/android-task/blob/master/screenshots/task-list.png" width="280"/> | <img src="https://github.com/kanake10/android-task/blob/master/screenshots/search-color.png" width="280"/> | <img src="https://github.com/kanake10/android-task/blob/master/screenshots/camera.png" width="280"/>
