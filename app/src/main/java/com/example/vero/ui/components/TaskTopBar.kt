@@ -11,11 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.unit.dp
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
 fun TaskTopBar(onQrClick: () -> Unit) {
     TopAppBar(
@@ -31,9 +34,10 @@ fun TaskTopBar(onQrClick: () -> Unit) {
                 Icon(
                     imageVector = Icons.Default.CameraAlt,
                     contentDescription = "Scan QR Code",
-                    modifier = Modifier.testTag("QrScanIcon")
+                    modifier = Modifier
+                        .semantics {testTagsAsResourceId = true}
+                        .testTag("QrScanIcon")
                 )
-
             }
         }
     )
