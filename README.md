@@ -82,6 +82,25 @@ This project uses a layered and modular testing strategy to ensure reliability, 
 - **UI Components (Jetpack Compose)**  
   UI elements such as the **Search Bar**, **Top App Bar**, and **Task List Item** are tested using `ComposeTestRule` to validate their behavior, state changes and interaction flows.
 
+## 📲 UI Automation with Maestro
+
+To enhance UI reliability and simulate real-world usage scenarios, this project uses [**Maestro**](https://maestro.mobile.dev/) for end-to-end testing.
+
+Two YAML-based flow tests are included under the `.maestro/` directory:
+
+1. **Offline Test:**  
+   **File:** `.maestro/task_app_offline.yaml`  
+   - Simulates app launch with Airplane Mode **enabled**.  
+   - Verifies appropriate error messages are shown and that no task data is loaded.
+
+2. **Online Test:**  
+   **File:** `.maestro/task_app_flow.yaml`  
+   - Simulates normal app behavior with internet access.  
+   - Validates UI interactions such as:
+     - Viewing and filtering task lists
+
+NB: I need to research whether there is a way to streamline this with a single test suite if Maestro gains support for toggling connectivity states.
+
 ## 📷 App's Preview
 
 Here is how the app look like in action:
