@@ -1,0 +1,15 @@
+appId: com.example.vero
+---
+- launchApp
+- assertVisible: Task App
+- assertVisible: Search Tasks Here...
+- assertVisible: Scan QR Code
+- assertNotVisible: No internet Connection!!
+- assertNotVisible: Retry
+- assertVisible: 100 Aufbau
+- tapOn: Search Tasks Here...
+- inputText: "100 Aufbau"
+- assertVisible: 100 Aufbau
+- eraseText
+- inputText: "nonExistentinputText"
+- assertVisible: No tasks found
