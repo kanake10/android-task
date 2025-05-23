@@ -48,7 +48,7 @@ class TaskRepositoryImpl @Inject constructor(
         val isLoggedIn = ensureLoggedIn()
         if (!isLoggedIn) {
             Timber.w("User not logged in or no internet connection.")
-            emit(Resource.Error("No internet Connection!!"))
+            emit(Resource.Error("Something went wrong."))
             return@flow
         }
 

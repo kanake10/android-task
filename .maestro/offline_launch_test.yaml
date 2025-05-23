@@ -1,0 +1,11 @@
+appId: com.example.vero
+---
+- launchApp
+- assertVisible: Task App
+- assertVisible: Search Tasks Here...
+- assertVisible: Scan QR Code
+- assertVisible: Something went wrong.
+- assertVisible: Retry
+- tapOn: Search Tasks Here...
+- inputText: "ytfuty"
+- assertVisible: No tasks found
