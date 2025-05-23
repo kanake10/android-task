@@ -18,20 +18,20 @@ The goal of this app is to:
 
 ## ✅ Features Implemented
 
-- 🔐 **Authentication** with OAuth2 using a login POST request and Bearer token authorization for subsequent API requests.
-- 🌐 **Fetch tasks** from a secured remote API.
-- 🗃️ **Local storage** of fetched data for offline availability.
-- 📋 **List view** to display:
+- **Authentication** with OAuth2 using a login POST request and Bearer token authorization for subsequent API requests.
+- **Fetch tasks** from a secured remote API.
+- **Local storage** of fetched data for offline availability.
+- **List view** to display:
   - Task name
   - Title
   - Description
   - A color block representing the `colorCode` property.
-- 🔍 **Search bar** in the menu:
+- **Search bar** in the menu:
   - Filters tasks by any property (even non-visible ones).
-- 📷 **QR Code scanning**:
+- **QR Code scanning**:
   - Automatically sets the scanned text as the current search query.
-- 🔄 **Swipe-to-refresh** to manually reload the data.
-- ⏱️ **Background worker** that syncs tasks from the server every 60 minutes.
+- **Swipe-to-refresh** to manually reload the data.
+- **Background worker** that syncs tasks from the server every 60 minutes.
 
 ---
 
@@ -63,7 +63,24 @@ The goal of this app is to:
 - [**MockK**](https://mockk.io/) – Kotlin-specific mocking library for unit tests.
 - [**MockWebServer**](https://github.com/square/okhttp/tree/master/mockwebserver) – Web server for testing Retrofit and OkHttp clients.
 
+## 🧪 Testing Approach
 
+This project uses a layered and modular testing strategy to ensure reliability, correctness and maintainability across the app’s architecture. Here’s how different components are tested:
+
+- **ViewModels**  
+  Tested in isolation using **fake repositories** and **JUnit** for assertions. This ensures business logic and state management behave as expected.
+
+- **Repositories**  
+  **MockK** is used to mock dependencies and test repository logic independently of data sources.
+
+- **DAO Layer**  
+  **Robolectric** enables running Room database tests directly on the JVM, ensuring fast and reliable database testing without the need for an emulator or device.
+
+- **API Layer**  
+  **MockWebServer** simulates API responses, allowing for testing Retrofit service interfaces and network behavior without hitting the real API.
+
+- **UI Components (Jetpack Compose)**  
+  UI elements such as the **Search Bar**, **Top App Bar**, and **Task List Item** are tested using `ComposeTestRule` to validate their behavior, state changes and interaction flows.
 
 ## 📷 App's Preview
 
