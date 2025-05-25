@@ -5,11 +5,8 @@ import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.example.vero.iteractor.TaskRepository
-import com.example.vero.utils.Resource
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
-import kotlinx.coroutines.flow.firstOrNull
-import timber.log.Timber
 
 @HiltWorker
 class SyncTasksWorker @AssistedInject constructor(
@@ -20,18 +17,8 @@ class SyncTasksWorker @AssistedInject constructor(
 
     override suspend fun doWork(): Result {
         return try {
-            val result = taskRepository.getTasks().firstOrNull()
-            return when (result) {
-                is Resource.Success -> {
-                    Result.success()
-                }
-                is Resource.Error -> {
-                    Result.retry()
-                }
-                else -> {
-                    Result.retry()
-                }
-            }
+            taskRepository.refreshTasks()
+            Result.success()
         } catch (e: Exception) {
             Result.retry()
         }
