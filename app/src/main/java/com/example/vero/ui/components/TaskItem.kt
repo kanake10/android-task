@@ -56,7 +56,6 @@ fun TaskItem(task: TaskModel) {
                     Text(
                         text = it,
                         style = MaterialTheme.typography.titleMedium,
-                        maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
                 }
@@ -68,7 +67,6 @@ fun TaskItem(task: TaskModel) {
                         text = it,
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
                 }
@@ -80,7 +78,6 @@ fun TaskItem(task: TaskModel) {
                         text = it,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
-                        maxLines = 3,
                         overflow = TextOverflow.Ellipsis
                     )
                 }
